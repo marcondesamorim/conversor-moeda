@@ -1,0 +1,24 @@
+:root {
+  --fonte-familia-principal: "Raleway", sans-serif;
+
+  --cor-primaria: #2A7AE4;
+  --cor-secundaria: #F5F5F5;
+}
+
+body {
+  margin: 0 auto;
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  background-color: var(--cor-secundaria);
+}
+
+.container {
+  padding: 16px;
+}
+
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
