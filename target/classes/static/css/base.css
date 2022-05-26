@@ -12,13 +12,22 @@ body {
   background-color: var(--cor-secundaria);
 }
 
-.container {
-  padding: 16px;
+.title {
+  margin: 1rem auto;
 }
 
-
-.title {
+.conversor {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.conversor * {
+  height: 3rem;
+}
+
+.conversor_conversao,
+.conversor_valor {
+  width: 40%;
 }

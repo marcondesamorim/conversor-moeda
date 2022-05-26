@@ -2,12 +2,12 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Spring Boot-StartWebApplication<web-thymeleaf>",
+            "name": "Spring Boot-StartWebApplication<conversor-moeda>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
             "console": "internalConsole",
             "mainClass": "com.conversor.StartWebApplication",
-            "projectName": "web-thymeleaf",
+            "projectName": "conversor-moeda",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
         }
