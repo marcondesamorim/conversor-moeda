@@ -31,3 +31,7 @@ body {
 .conversor_valor {
   width: 40%;
 }
+
+.text-align-center {
+  text-align: center;
+}

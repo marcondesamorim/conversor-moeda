@@ -54,10 +54,11 @@
                 <span class="input-group-text" id="basic-addon1">Valor</span>
                 <input type="text" id="txtValor" class="form-control" required />
             </div>
-            <button class="conversor_converter btn btn-primary" type="button">Converter</button>
+            <button class="conversor_converter btn btn-primary" type="button"
+                th:onclick="|window.location.href='/do-stuff'">Converter</button>
         </div>
 
-        <table class="table">
+        <table class=" table">
             <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -67,30 +68,16 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                <tr class="text-align-center" th:if="${cotacoes.empty}">
+                    <td colspan="4"> Sem cotações disponíveis </td>
+                </tr>
+                <tr th:each="Cotação : ${cotacoes}">
+                    <td><span th:text="${cotacao.code}"> Title </span></td>
+                    <td><span th:text="${cotacao.codein}"> Author </span></td>
                 </tr>
             </tbody>
         </table>
-
-
-        <!-- 
-
-        <h2>
-            <span th:text="'Hello, ' + ${message}"></span>
-        </h2>
-
-        <ol>
-            <li th:each="task : ${tasks}" th:text="${task}"></li>
-        </ol>
- -->
     </main>
-    <!-- /.container -->
-
-    <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
         crossorigin="anonymous"></script>
