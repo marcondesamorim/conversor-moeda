@@ -68,8 +68,8 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="text-align-center" th:if="${cotacoes.empty}">
-                    <td colspan="4"> Sem cotações disponíveis </td>
+                <tr th:if="${cotacoes.empty}">
+                    <td class="text-center" colspan="4"> Sem cotações disponíveis </td>
                 </tr>
                 <tr th:each="Cotação : ${cotacoes}">
                     <td><span th:text="${cotacao.code}"> Title </span></td>

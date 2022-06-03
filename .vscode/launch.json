@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch StartWebApplication",
+            "request": "launch",
+            "mainClass": "com.conversor.StartWebApplication",
+            "projectName": "web-thymeleaf"
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-StartWebApplication<conversor-moeda>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
