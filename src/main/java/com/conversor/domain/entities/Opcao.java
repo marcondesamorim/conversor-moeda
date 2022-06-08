@@ -1,0 +1,14 @@
+package com.conversor.domain.entities;
+
+public enum Opcao {
+    REAL_DOLAR,
+    REAL_EURO,
+    REAL_LIBRAS_ESTERLINAS,
+    REAL_PESO_ARGENTINO,
+    REAL_PESO_CHILE,
+    DOLAR_REAL,
+    EURO_REAL,
+    LIBRAS_ESTERLINAS_REAL,
+    PESO_ARGENTINO_REAL,
+    PESO_CHILENO_REAL
+}

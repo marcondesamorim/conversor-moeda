@@ -1,4 +1,4 @@
-package com.conversor.service;
+package com.conversor.services;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -8,11 +8,11 @@ import java.net.URL;
 import org.springframework.stereotype.Service;
 
 import com.conversor.Util;
-import com.conversor.domain.Cotacao;
+import com.conversor.domain.entities.Cotacao;
 import com.google.gson.Gson;
 
 @Service
-public class MoedasService {
+public class CotacaoAPIService {
     static String webService = "https://economia.awesomeapi.com.br/last/";
     static int codigoSucesso = 200;
 

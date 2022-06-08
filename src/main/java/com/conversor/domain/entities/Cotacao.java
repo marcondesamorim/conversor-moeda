@@ -1,4 +1,4 @@
-package com.conversor.domain;
+package com.conversor.domain.entities;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -6,6 +6,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Cotacao {
+    int id;
     String code;
     String codein;
     String name;
@@ -21,8 +22,8 @@ public class Cotacao {
     public Cotacao() {
     }
 
-    public Cotacao(String code, String codein, String name, double high, double low, double varBid, double pctChange,
-            double bid, double ask, int timestamp, String create_date) {
+    public Cotacao(String code, String codein, String name, double high, double low, double varBid,
+            double pctChange, double bid, double ask, int timestamp, String create_date) {
         this.code = code;
         this.codein = codein;
         this.name = name;
@@ -38,10 +39,9 @@ public class Cotacao {
 
     @Override
     public String toString() {
-        return "Cotacao{" + "code=" + code + ", codein=" + codein + ", name=" + name + ", high" + high + ", low" + low
-                + ", varBid" + varBid + ", pctChange" + pctChange + ", bid" + bid + ", ask" + ask + ", timestamp"
-                + timestamp
-                + ", create_date" + create_date + "}";
+        return "Cotacao{" + "code=" + code + ", codein=" + codein + ", name=" + name + ", high" + high
+                + ", low" + low + ", varBid" + varBid + ", pctChange" + pctChange + ", bid" + bid + ", ask" + ask
+                + ", timestamp" + timestamp + ", create_date" + create_date + "}";
     }
 
 }
