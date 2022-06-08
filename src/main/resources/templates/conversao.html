@@ -24,10 +24,10 @@
 <body>
     <main class="container">
         <h1 class="title d-flex justify-content-center">Conversor de Moedas</h1>
-        <form class="col card p-3 my-5" method="post" th:action="@{/}" th:object="${conversao}">
+        <form class="col card p-3 my-5 text-center" method="post" th:action="@{/}" th:object="${conversao}">
             <div class="form-group">
                 <label for="Opcao">Conversão</label>
-                <select class="form-control " id="opcao" required th:field="*{opcao}">
+                <select class="form-control conversao_select" id="opcao" required th:field="*{opcao}">
                     <option hidden value="">Selecione uma conversão</option>
                     <option th:each="opcao : ${T(com.conversor.domain.entities.Opcao).values()}" th:text="${opcao}"
                         th:value="${opcao}">
@@ -36,7 +36,7 @@
             </div>
             <div class="form-group">
                 <label for="valor"> Valor</label>
-                <input class="form-control" type="text" id="txtValor" value=""
+                <input class="form-control valor_input" type="text" id="txtValor" value=""
                     placeholder="Digite o valor que será convertido..." required />
             </div>
             <div>
@@ -55,7 +55,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="text-align-center" th:if="${conversoes.empty}">
+                <tr class="text-center" th:if="${conversoes.empty}">
                     <td colspan="4"> Sem cotações disponíveis </td>
                 </tr>
                 <tr th:each="Conversao : ${conversoes}">
