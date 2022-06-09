@@ -6,10 +6,10 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Conversao {
-    int id;
+    Integer id;
     Opcao opcao;
-    double original;
-    double convertido;
+    Double original;
+    Double convertido;
 
     public Conversao() {
     }

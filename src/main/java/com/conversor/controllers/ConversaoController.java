@@ -27,6 +27,7 @@ public class ConversaoController {
         List<Conversao> conversoes = conversaoService.getConversoes();
         model.addAttribute("conversoes", conversoes);
         model.addAttribute("conversao", new Conversao());
+
         return "conversao";
     }
 
