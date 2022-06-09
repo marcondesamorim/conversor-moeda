@@ -23,44 +23,45 @@
 
 <body>
     <main class="container">
-        <h1 class="title d-flex justify-content-center">Conversor de Moedas</h1>
-        <form class="col card p-3 my-5 text-center" method="post" th:action="@{/}" th:object="${conversao}">
-            <div class="form-group">
+        <h1 class="title">Conversor de Moedas</h1>
+        <form class="formulario col card p-3 my-5" method="post" th:action="@{/}" th:object="${conversao}">
+            <div class="form-group  w-100 p-3">
                 <label for="Opcao">Conversão</label>
-                <select class="form-control conversao_select" id="opcao" required th:field="*{opcao}">
+                <select class="form-control" id="opcao" required th:field="*{opcao}">
                     <option hidden value="">Selecione uma conversão</option>
-                    <option th:each="opcao : ${T(com.conversor.domain.entities.Opcao).values()}" th:text="${opcao}"
-                        th:value="${opcao}">
+                    <option class="form-control" th:each="opcao : ${T(com.conversor.domain.entities.Opcao).values()}"
+                        th:text="${opcao}" th:value="${opcao}">
                     </option>
                 </select>
             </div>
-            <div class="form-group">
+            <div class="form-group w-100 p-3">
                 <label for="valor"> Valor</label>
-                <input class="form-control valor_input" type="text" id="txtValor" value=""
-                    placeholder="Digite o valor que será convertido..." required />
+                <input class="form-control" type="number" id="txtValor" value=""
+                    placeholder="Digite o valor que será convertido..." required th:field="*{original}" />
             </div>
-            <div>
-                <input class="btn btn-primary" type="submit" value="Converter">
+            <div class="form-group botoes d-flex justify-content-center">
+                <input class=" btn btn-primary" type="submit" value="Converter">
                 <input class="btn btn-dark" type="reset" value="Cancelar">
             </div>
         </form>
-
+        <div th:if="${userMessage}" th:utext="${userMessage}" class="alert alert-success text-center"></div>
         <table class=" table">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Conversão</th>
-                    <th scope="col">Original</th>
-                    <th scope="col">Convertido</th>
+                    <th scope="col"> # </th>
+                    <th scope="col"> Conversão </th>
+                    <th scope="col"> Original </th>
+                    <th scope="col"> Convertido </th>
                 </tr>
             </thead>
             <tbody>
                 <tr class="text-center" th:if="${conversoes.empty}">
                     <td colspan="4"> Sem cotações disponíveis </td>
                 </tr>
-                <tr th:each="Conversao : ${conversoes}">
+                <tr th:each="conversao : ${conversoes}">
+                    <td><span th:text="${conversao.id}"> # </span></td>
                     <td><span th:text="${conversao.opcao}"> Conversão </span></td>
-                    <td><span th:text="${conversao.origina}"> Valor original </span></td>
+                    <td><span th:text="${conversao.original}"> Valor original </span></td>
                     <td><span th:text="${conversao.convertido}"> Valor convertido </span></td>
                 </tr>
             </tbody>

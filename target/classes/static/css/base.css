@@ -14,6 +14,20 @@ body {
 
 .title {
   margin: 1rem auto;
+  text-align: center;
+}
+
+.formulario {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.botoes {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  gap: 1rem;
 }
 
 /* .conversor {
@@ -35,14 +49,3 @@ body {
 .text-align-center {
   text-align: center;
 }*/
-
-.inputs {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-.conversao_select,
-.valor_input {
-  width: 60%;
-}
