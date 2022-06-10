@@ -11,12 +11,6 @@
         href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" type="text/css" th:href="@{/css/base.css}">
 
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <!-- <script type="text/javascript">
-        $(document).ready(function () {
-            $('#txtValor').mask('000.000.000.000.000,00', { reverse: true });
-        });
-    </script> -->
 
 
 </head>
@@ -27,17 +21,18 @@
         <form class="formulario col card p-3 my-5" method="post" th:action="@{/}" th:object="${conversao}">
             <div class="form-group  w-100 p-3">
                 <label for="Opcao">Conversão</label>
-                <select class="form-control" id="opcao" required th:field="*{opcao}">
+                <select class="form-control" required th:field="*{codigo}">
                     <option hidden value="">Selecione uma conversão</option>
-                    <option class="form-control" th:each="opcao : ${T(com.conversor.domain.entities.Opcao).values()}"
-                        th:text="${opcao}" th:value="${opcao}">
+                    <option class="form-control" th:each="moeda : ${moedas}" th:text="${moeda.descricao}"
+                        th:value="${moeda.codigo}">
                     </option>
                 </select>
             </div>
             <div class="form-group w-100 p-3">
                 <label for="valor"> Valor</label>
-                <input class="form-control" type="number" id="txtValor" value=""
-                    placeholder="Digite o valor que será convertido..." required th:field="*{original}" />
+                <input type="text" class="form-control" th:field="*{original}"
+                    data-inputmask="'alias': 'numeric', 'autoGroup': true, 'digits': 2, 'groupSeparator': '.', 'radixPoint' : ',', 'digitsOptional': false, 'allowMinus' : false, 'prefix': '', 'placeholder': '0'"
+                    placeholder="Digite o valor que será convertido..." autocomplete="off" />
             </div>
             <div class="form-group botoes d-flex justify-content-center">
                 <input class=" btn btn-primary" type="submit" value="Converter">
@@ -60,14 +55,19 @@
                 </tr>
                 <tr th:each="conversao : ${conversoes}">
                     <td><span th:text="${conversao.id}"> # </span></td>
-                    <td><span th:text="${conversao.opcao}"> Conversão </span></td>
+                    <td><span th:text="${conversao.codigo}"> Conversão </span></td>
                     <td><span th:text="${conversao.original}"> Valor original </span></td>
                     <td><span th:text="${conversao.convertido}"> Valor convertido </span></td>
                 </tr>
             </tbody>
         </table>
     </main>
-    <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script th:src="@{css/jquery.inputmask.min.js}"></script>
+    <script>
+        $(":input").inputmask();
+    </script>
 </body>
 
 </html>

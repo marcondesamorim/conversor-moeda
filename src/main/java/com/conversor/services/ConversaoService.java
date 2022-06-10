@@ -35,7 +35,7 @@ public class ConversaoService {
                 .orElseThrow(NotFoundException::new);
 
         conversao.setId(id);
-        conversao.setOpcao(request.getOpcao());
+        conversao.setCodigo(request.getCodigo());
         conversao.setOriginal(request.getOriginal());
         conversao.setConvertido(request.getConvertido());
 

@@ -13,10 +13,10 @@ import com.google.gson.Gson;
 
 @Service
 public class CotacaoAPIService {
-    static String webService = "https://economia.awesomeapi.com.br/last/";
-    static int codigoSucesso = 200;
+    String webService = "https://economia.awesomeapi.com.br/last/";
+    int codigoSucesso = 200;
 
-    public static Cotacao pegaCotacao(String moeda) throws Exception {
+    public Cotacao pegaCotacao(String moeda) throws Exception {
         String urlString = webService + moeda;
 
         try {
@@ -37,5 +37,4 @@ public class CotacaoAPIService {
             throw new Exception("ERRO: " + e);
         }
     }
-
 }

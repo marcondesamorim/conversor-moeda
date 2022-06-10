@@ -7,23 +7,23 @@ import lombok.Setter;
 @Setter
 public class Conversao {
     Integer id;
-    Opcao opcao;
-    Double original;
-    Double convertido;
+    String codigo;
+    String original;
+    String convertido;
 
     public Conversao() {
     }
 
-    public Conversao(int id, Opcao opcao, Double original, Double convertido) {
+    public Conversao(int id, String codigo, String original, String convertido) {
         this.id = id;
-        this.opcao = opcao;
+        this.codigo = codigo;
         this.original = original;
         this.convertido = convertido;
     }
 
     @Override
     public String toString() {
-        return "Cotacao{" + "id=" + id + ", opcao=" + opcao + ", original=" + original + ", convertido=" + convertido
+        return "Cotacao{" + "id=" + id + ", codigo=" + codigo + ", original=" + original + ", convertido=" + convertido
                 + "}";
     }
 

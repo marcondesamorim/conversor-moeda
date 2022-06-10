@@ -10,20 +10,20 @@ public class Cotacao {
     String code;
     String codein;
     String name;
-    double high;
-    double low;
-    double varBid;
-    double pctChange;
-    double bid;
-    double ask;
+    Float high;
+    Float low;
+    Float varBid;
+    Float pctChange;
+    Float bid;
+    Float ask;
     int timestamp;
     String create_date;
 
     public Cotacao() {
     }
 
-    public Cotacao(String code, String codein, String name, double high, double low, double varBid,
-            double pctChange, double bid, double ask, int timestamp, String create_date) {
+    public Cotacao(String code, String codein, String name, Float high, Float low, Float varBid,
+            Float pctChange, Float bid, Float ask, int timestamp, String create_date) {
         this.code = code;
         this.codein = codein;
         this.name = name;
